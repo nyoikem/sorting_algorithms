@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void swap(listint_t *a, listint_t *b);
+void swap(listint_t *a, listint_t *b)
 {
 	if (a->prev)
 		a->prev->next = b;
@@ -27,7 +27,7 @@ void swap(listint_t *a, listint_t *b);
  * Return: void
  */
 
-void insertion_sort_list(listint_t **list);
+void insertion_sort_list(listint_t **list)
 {
 	listint_t *c, *d;
 
@@ -40,11 +40,11 @@ void insertion_sort_list(listint_t **list);
 		c = c->next;
 		while (d && d->prev)
 		{
-			if (d->prev->n > j->n)
+			if (d->prev->n > d->n)
 			{
 				swap(d->prev, d);
 				if (!d->prev)
-					*list = j;
+					*list = d;
 				print_list((const listint_t *)*list);
 			}
 			else
